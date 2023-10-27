@@ -1,0 +1,74 @@
+{% load static %}
+<html>
+
+<head>
+<link rel="stylesheet" href="{% static 'css/stylest.css' %}">
+ <title>BOOKING FORM</title></head>
+
+<body>
+
+<div class="form-box">
+<form action="{% url 'appointment' %}" class="input-group" method="POST">
+{% csrf_token %}
+<div class="bookform"><h1>Book your Order</h1></div>
+
+<div id="table">
+
+<div>
+<label for="fullname">Full Name :</label>
+<input type="text" name="fullname" id="name"  class="input-field" placeholder="Enter your Full name">
+</div>
+
+<div>
+<label for="contactno">Number:</label>
+<input type="text" name="contactno" id="phoneno"  class="input-field" placeholder="Enter Phone Number">
+</div>
+
+<div>
+<label for="email">Email :</label>
+<input type="email" name="email" id="emailid"  class="input-field" placeholder="Enter your email address">
+</div>
+
+<div>
+<label for="pickupdate">Date and Time :</label>
+<input type="datetime-local" name="pickupdate" id="orderdate"  class="input-field" >
+</div>
+
+<div >
+<label for="from-location">From Location :</label>
+<input type="text" name="from-location" id="source-location"  class="input-field" placeholder="Enter your(sender)sddress" >
+</div>
+
+<div>
+<label for="to-location">To Location:</label>
+<input type="text" name="to-location" id="destination"  class="input-field" placeholder="Enter  Receiver address" >
+</div>
+
+
+<div>
+<label for="weight">Parcel weight :</label>
+<input type="text" name="weight" id="order-weight"  class="input-field" placeholder="Enter parcel weight in kg">
+</div>
+
+<div>
+<label for="Price">Price :</label>
+<input type="text" name="Price" id="order-price"  class="input-field" placeholder="Price">
+</div>
+
+
+
+<div>
+<button type="submit" class="submit-btn" value= 'POST'>SUBMIT</button>
+</div>
+
+<div>
+<button type="reset" class="submit-btn" >RESET</button>
+</div>
+
+
+</form>
+</div>
+
+
+</body >
+</html>

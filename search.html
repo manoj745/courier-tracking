@@ -1,0 +1,136 @@
+<h1>Review Your Information:</h1>
+ {% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Admin: SendIT - Orders</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="../images/favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="css/dialog.css" />
+  <link rel="stylesheet" href="{% static 'css/order.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="C:\Users\dell\Desktop\miniproject\orders.js"></script>
+  <link rel="stylesheet" href="{% static 'orders.js' %}">
+  <style>
+    .to {
+      display: none;
+    }
+    @media screen and (max-width: 816px){
+      .order-list {
+        width: 100%;
+      }
+    }
+    @media screen and(max-width: 666px){
+      .list-col-icon {
+        display: none;
+      }
+    }
+    @media screen and (max-width: 668px){
+      .dest {
+        display: none;
+      }
+      .to {
+        display: inline-block
+      }
+    }
+
+    @media screen and (max-width: 828px){
+      .kg {
+        display: none
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+    <nav>
+      <a href="index.html"><img src="../images/nav_logo.png" class="logo" /></a>
+      <button class="menu"><i class="fa fa-bars"></i></button>
+      <div class="dropdown">
+        <span>
+          <a href="{% url 'app' %}">Home</a>
+        </span>
+        <span>
+          <a href="{% url 'order' %}" class="active-link">TRACKS COURIERS</a>
+        </span>
+        <a href="{%url 'about'%}" target="_blank">About</a>
+        <span>
+        </span>
+        <span>
+          <a href="{%url 'contact'%}">contact</a>
+        </span>
+        <span>
+          <a href="{%url 'login'%}">login</a>
+        </span>
+      </div>
+     <ul>
+                                
+                <li><a href="{%url 'app'%}" target="_blank">Home</a></li>
+                
+                 <li class="active"><a href="#">Track Courier</a></li>
+                 <li><a href="{%url 'about'%}" target="_blank">About</a></li>
+                 <li><a href="{%url 'contact'%}">Contact</a></li>
+                 <li><a href="{%url 'login'%}" target="_blank">login</a></li>
+                 
+                 
+
+            </ul>
+            
+    </nav>
+
+    <div class="order-list">
+     
+      <form action="." method = "POST">
+       {% csrf_token %}
+        <input type="text" placeholder="Search for Orders" id = "orderno">
+        <button type="submit">search</button>
+      </form>
+      
+
+      <div class="header">
+        <div class="hdr-item">OrderId</div>
+        <div class="hdr-item">From</div>
+        <div class="hdr-item"><span class="to">To</span><span class="dest">Destination</span></div>
+        <div class="hdr-item">Weight <span class="kg">(in kg)</span></div>
+        <div class="hdr-item">Price (USD)</div>
+        <div class="hdr-item">
+          <div class="status">
+            <button>
+              Status
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <ul class="dropdown">
+              <li class="all">All Orders</li>
+              <!--<li class="delivered">Delivered</li>
+              <li class="not-delivered">Not Delivered</li>
+              -->
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="list-item item-not-delivered">
+        <div class="list-col">{{id}}</div>
+        <div class="list-col">{{from}}</div>
+        <div class="list-col">{{To}}</div>
+        <div class="list-col">{{weight}}</div>
+        <div class="list-col">{{price}}</div>
+        <div class="list-col-icon">
+          <a href="#" class="icon-style edit">
+            <icon class="fa fa-edit"></icon>
+          </a>
+          <a href="#" class="icon-style trash">
+            <icon class="fa fa-trash"></icon>
+          </a>
+        </div>
+      </div>
+
+
+    
+      </body>
+
+</html>

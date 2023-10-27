@@ -1,0 +1,66 @@
+
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/basestyle.css' %}">  
+    
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/basestyle.css' %}">  
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <title>{% block title %}{% endblock title %}
+            COURIER TRACKING</title>
+  </head>
+<body>
+ 
+    {% comment %} {% include 'header.html'%} {% endcomment %}
+    <div class="main">
+          <div id="logo">
+             <img src="{% static 'img\logo.png'%}" alt height="90" weight="90">
+            </div>
+           <nav>
+              <a href="index.html"><img src="../images/nav_logo.png" class="logo" /></a>
+      <button class="menu"><i class="fa fa-bars"></i></button>
+      <div class="dropdown">
+        <span>"{%url 'contact'%}"
+          <a href="{%url 'index.html' %}" class="active-link">Home</a>
+        </span>
+        <span>
+          <a href="{%url 'order.html' %}">TRACKS COURIERS</a>
+        </span>
+        <span>
+          <a href="{% url 'contact.html'%}">contact</a>
+        </span>
+        <span>
+          <a href="{% url 'logout.html' %}">Exit</a>
+        </span>
+
+            <ul>
+                 <li class="active"><a href="#">Home</a></li>
+                 <li><a href="{% url 'order' %}">TRACKS COURIERS</a></li>
+                 <li><a href="{% 'about" %}" target="_blank">About</a></li>
+                 <li><a href="{% url 'contact.html'%}">Contact</a></li>
+                 <li><a href="{% url 'login.html' %}" target="_blank">login</a></li>
+                 
+
+            </ul>
+            <nav>
+    </div>
+
+
+    hckjshckjscnmcm,name
+
+    {% include 'footer.html'%}
+
+    
+
+    
+    </body>
+</html>

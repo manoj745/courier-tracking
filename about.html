@@ -1,0 +1,78 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/basestyle.css' %}">  
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">  
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">  
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <title> {% comment %}{% block title %}{% endblock title %} {% endcomment %}
+      COURIER TRACKING</title>
+    </head>
+    <body>
+ 
+     {% comment %} {% include 'header.html'%} {% endcomment %}
+      <div class="main">
+          <div id="logo">
+             <img src="{% static 'img\logo.png'%}" alt height="90" weight="90">
+            </div>
+           
+            <ul>
+                 
+                   <li ><a href="{% url 'app' %}">Home</a></li>
+                    <li><a href="{% url 'order' %}">TRACKS COURIERS</a></li>
+                    <li class="active"><a href="#">About</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                    <li><a href="{% url 'logout' %}" target="_blank">logout</a></li>
+                        <li><a href="{% url 'submit' %}">submit</a></li>
+
+
+            </ul>
+            
+    </div>
+    <marquee >Courier tracking website</marquee>
+
+      <img src="{% static 'img\4.jpg' %}" height="500" width="1350" >
+        <h1>WHO WE ARE: </h1>
+        <p1>-:we are provideing service to trackyour courier within the country and outside the country.
+            we are giving secure services.
+             </p1>
+        <div class="footer"><img src="{% static 'logo1.jpg'%}" alt="" height="1000" weigth="500"></div>
+        <h2>THE EVOLUTION OF DOMESTIC PARCEL SERVICES OVER THE YEARS</h2>
+        <p2>
+        The Indian domestic parcel shipping industry has surely come a long way. The different modes of tranisport today have a wide range of delivery options and shipping facilities to ensure the timely and safe delivery of packages. These services are not only used by individuals sending parcels from one place to the other but are also used by industries to a large extent, the main one being e-commerce.
+            
+           
+        </p2>
+           <h3> CHALLENGES FACED BY DOMESTIC PARCEL SERVICES IN INDIA</h3>
+            <p3>
+            
+            When it comes to offering the most efficient, reliable and fastest domestic courier service in India, there are certain issues that can arise while delivering a parcel. India with its various seasons and difficult terrains put the last mile capabilities of courier services to test.
+            Tackling such issues requires a domestic parcel service in India which is well aware of the seasonal demands and regions. They should be equipped with dedicated personnel who can navigate the routes to ensure that these challenges are met with ease.
+           
+        </p3>
+        <h4>DELHIVERY’S TRANSPORT MANAGEMENT SYSTEM</h4> 
+          <p4>  Our domestic courier services in India are backed by an integrated transport management system that enables the customers as well as the company to ensure seamless and convenient operations for all services related to domestic couriers in India.
+            
+            With Delhivery’s transport management system for sending domestic couriers in India, customers can easily schedule convenient pick-ups and track their orders in real-time, while our domestic parcel service manages returns and replacements, and even helps with fraud detection. The TMS system helps move parcels from origin to destination efficiently, reliably, and cost-effectively.
+          </p4>
+        </h3>
+        
+
+    {% include 'footer.html' %}
+
+
+    
+
+
+    </body>
+   
+        

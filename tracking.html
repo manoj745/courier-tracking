@@ -1,0 +1,215 @@
+
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/basestyle.css' %}">  
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">  
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/basestyle.css' %}">  
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <title>
+  COURIER TRACKING</title>
+  </head>
+  <body>
+ 
+    {% comment %} {% include 'header.html'%} {% endcomment %}
+    <div class="main">
+          <div id="logo">
+             <img src="{% static 'img\logo.png'%}" alt height="90" weight="90">
+            </div>
+           
+            <ul>
+                 <li class="active"><a href="#">Home</a></li>
+                 <li><a href="trackingpage.html">TRACKS COURIERS</a></li>
+                 <li><a href="about.html" target="_blank">About</a></li>
+                 <li><a href="#">Contact</a></li>
+                 <li><a href="lgn.html" target="_blank">login</a></li>
+                 
+
+            </ul>
+            
+    </div>
+
+  <!----code html------>
+  <title>Add Map</title>
+     <style>
+      .main1
+{
+    max-width: 1500px;
+    margin-top: 0%;
+    margin:auto;
+    display: flex;
+    
+}
+.main1::before{
+    content: "";
+    background-color: rgb(172, 163, 163);
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.4;
+}
+ .container
+      {
+        width: 100%;
+        height:100vh;
+        margin: 10px 10px 10px 10px;
+       align-items: center right;
+      justify-content: center;
+
+      }
+      
+      .flexbox12
+      {
+        display: flex;
+        flex-direction:column ;
+        background-color: rgb(144, 233, 144);
+       width: 350px;
+       height: 280px;
+       margin: auto;
+       box-shadow: 0  0 40px 20px rgba(0,0,0,0.26);
+       perspective: 1000px;
+       align-items: center;
+       justify-content: center;
+        border:chartreuse;
+      }
+    
+.input-box{
+    width: 100%;
+    background:transparent;
+    border: 1px solid #fff;
+    margin: 6px 0;
+    height: 32px;
+    border-radius: 20px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    outline: none;
+    text-align:center;
+    color:#fff;
+}
+::placeholder{
+    color: #fff;
+    font-size: 12px;
+}
+   button{
+    width: 90%;
+    background: transparent;
+    border: 1px solid #fff;
+    margin: 37px 0 10px;
+    height: 39px;
+    font-size: 12px;
+    border-radius: 30px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    outline: none;
+    color: #fff; 
+    cursor: pointer;
+}
+      ul{ 
+     float:right;
+    list-style-type:none;
+    margin-top: 5px;
+    margin-right: 10px;
+   
+}
+ul li
+{
+display:inline-block;
+}
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    padding:5px 20px;
+   border:1px solid transparent;
+   transition: 0.6s ease;
+}
+ul li a:hover{
+    background-color: white;
+    color:black;
+}
+ul li.active a{
+    background-color:white;
+    color: #000;
+}
+
+ h1{
+    color:white;
+    text-align: center;
+    font-family: 'Bree Serif',serif;
+}
+
+    </style>
+
+    <style type="text/css">
+      /* Set the size of the div element that contains the map */
+      #map { 
+        display: flex;
+        flex-direction: column;
+        margin-top: 50%;
+        top:80vh;
+        height: 200px;
+        /* The height is 200 pixels */
+        width: 200vh;
+        /* The width is the width of the web page */
+        margin-left: 40px;
+      }
+    </style>
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        // The location of location
+        var location = { lat: 30.107700, lng: 78.287804 };
+        // The map, centered atlocation
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 4,
+          center: location,
+        });
+        // The marker, positioned at location
+        const marker = new google.maps.Marker({
+          position: location,
+          map: map,
+        });
+      }
+    </script>
+    <!--The div element for the map -->
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8R10r8_FJzAOwYpO2W0TpaWTbKFdBhYk&callback=initMap"
+      async
+    ></script>
+    <section id="back">
+    <div class="container">
+      <div class="flexbox12">
+        <h1>Track your Parcel</h1>
+        <div class="inner-box">
+          <input type="text" class="input-box" placeholder="COURIER NUMBER" required>
+          <button type="submit" class="submit-btn">Submit</button>
+        </div>
+      </section>
+       
+    </div>
+   </div>
+   <!---code end-->
+
+
+
+   
+
+    {% include 'footer.html'%}
+
+    
+
+    
+    </body>
+</html>
